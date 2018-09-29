@@ -1,0 +1,15 @@
+Work Plan : 
+
+By 11:59 PM Tuesday 10/2:
+Design the individual modules associated with the ALU : 2.5 hours
+Test each individual module separately : 3 hours
+
+By 1:00 PM Thursday 10/4:
+Integrate modules into complete ALU : 1 hour
+Test complete ALU : 1.5 hours
+
+By 11:59 PM Thursday 10/4:
+Look at and document propagation delays for each operation : 1 hour
+
+By 10:50 AM Friday 10/5:
+Write a report, summary of tests, and work plan reflection : 2.5 hours
