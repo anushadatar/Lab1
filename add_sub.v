@@ -11,15 +11,12 @@ module add_sub
   input carryin
 );
   wire out1,out2,out3;
-  wire Bin;
 
-  `XOR bin(Bin,B,carryin);
-
-  `XOR xor1(out1,A,Bin);
+  `XOR xor1(out1,A,B);
   `XOR xor2(sum,out1,carryin);
 
   `AND and1(out2,out1,carryin);
-  `AND and2(out3,A,Bin);
+  `AND and2(out3,A,B);
 
   `OR or1(carryout,out2,out3);
 endmodule
@@ -34,15 +31,12 @@ module add_sub_last
   input carryin
 );
   wire out1,out2,out3;
-  wire Bin;
 
-  `XOR bin(Bin,B,carryin);
-
-  `XOR xor1(out1,A,Bin);
+  `XOR xor1(out1,A,B);
   `XOR xor2(sum,out1,carryin);
 
   `AND and1(out2,out1,carryin);
-  `AND and2(out3,A,Bin);
+  `AND and2(out3,A,B);
 
   `OR or1(carryout,out2,out3);
 
