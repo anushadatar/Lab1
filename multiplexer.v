@@ -1,3 +1,4 @@
+`define MUX multiplexer
 module multiplexer
 (
   input[0:7] I,

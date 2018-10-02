@@ -3,20 +3,26 @@
 `include "add_sub.v"
 
 
-`define MUX multiplxer #10
+`define MUX  multiplexer #10 //this delay could be wrong & this line does not work
+`define AND  ALUand
+`define OR   ALUor
+`define NAND ALUnand
 
 module ALU_first
 (
-output[0:7] out,
+output out,
 output carryout,
 input A,
 input B,
 input SLT,
-input S0,
-input S1,
-input S2
+input S[0:2]
 );
-  //code
+  wire I[0:7];
+
+  ALUand and1(I[1], A, B);
+  ALUor  or1(I[2], A, B);
+  multiplexer mux(out, I, S, );
+
 endmodule
 
 module ALU_last
@@ -33,6 +39,8 @@ module ALU_last
   input S2
 );
   add_sub(sum,carryout,A,B,S0);
+
+
 
   //this is the plan
 endmodule
