@@ -1,13 +1,14 @@
 `define MUX multiplexer
 module multiplexer
 (
-  input[0:7] I,
-  input[0:3] S,
-  output reg out
+  output reg out,
+  input[7:0] I,
+  input[2:0] S
+
 );
 
 
-always @( S or out)
+always @(S or out)
 begin
   if(S == 0)
     out = I[0];

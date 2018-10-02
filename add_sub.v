@@ -1,5 +1,5 @@
 `define AND and #30
-`define XOR xor #20
+`define XOR xor #30
 `define OR or #30
 
 module add_sub

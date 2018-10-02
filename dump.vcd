@@ -1,0 +1,29 @@
+$date
+	Tue Oct  2 17:02:34 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testMux $end
+$var wire 1 ! out $end
+$var reg 8 " I [7:0] $end
+$var reg 3 # S [2:0] $end
+$scope module mux $end
+$var wire 8 $ I [7:0] $end
+$var wire 3 % S [2:0] $end
+$var reg 1 ! out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11 %
+b10001000 $
+b11 #
+b10001000 "
+1!
+$end
+#1000000
