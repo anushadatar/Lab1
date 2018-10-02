@@ -1,7 +1,13 @@
+`include "multiplexer.v"
+`include "gates.v"
+`include "add_sub.v"
+
+
+`define MUX multiplxer #10
 
 module ALU_first
 (
-output out,
+output[0:7] out,
 output carryout,
 input A,
 input B,
@@ -27,6 +33,7 @@ module ALU_last
   input S2
 );
   add_sub(sum,carryout,A,B,S0);
+
   //this is the plan
 endmodule
 

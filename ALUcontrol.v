@@ -1,3 +1,5 @@
+
+
 module ALUcontrolLUT
 (
 output reg[2:0] 	muxindex,

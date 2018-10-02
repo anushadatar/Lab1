@@ -11,6 +11,7 @@ module add_sub
   input carryin
 );
   wire out1,out2,out3;
+  wire Bin;
 
   `XOR bin(Bin,B,carryin);
 
@@ -33,6 +34,7 @@ module add_sub_last
   input carryin
 );
   wire out1,out2,out3;
+  wire Bin;
 
   `XOR bin(Bin,B,carryin);
 
