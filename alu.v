@@ -53,6 +53,7 @@ assign I[3] = 0;
   //this is the plan
 endmodule
 
+
 module ALU_1bit
 (
   output out,
@@ -66,9 +67,7 @@ module ALU_1bit
   wire modB;
   wire as;
 
-  assign I[0] = as;
-  assign I[1] = as;
-  assign I[3] = 0;
+
 
   `XOR        anush(modB, B, S[0]);
   `ADDSUB     will(as, carryout, A, modB, carryin);
@@ -79,6 +78,11 @@ module ALU_1bit
   `OR         purpoise(I[7], A, B);
 
   `MUX        elonMux(out, I, S);
+
+  assign I[0] = as;
+  assign I[1] = as;
+  assign I[3] = 0;
+  
 endmodule
 
 module ALU
