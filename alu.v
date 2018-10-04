@@ -13,6 +13,7 @@
 `define ALUBIT  ALU_1bit
 `define ALULAST ALU_last
 `define ADDSUB  add_sub
+`define ADDSUBL add_sub_last
 
 
 
@@ -21,20 +22,18 @@ module ALU_last
   output out,
   output overflow,
   output carryout,
-  output SLT,
   output zero,
   input A,
   input B,
   input carryin,
-  input[0:2] S
+  input[2:0] S
 );
-  wire[0:7] I;
+  wire[7:0] I;
   wire modB;
   wire as;
 
   assign I[0] = as; //output 0 is add
   assign I[1] = as; // output 1 is sub
-  assign I[3] = 0;  // output 3 is zero (SLT)
 
   `XOR        xorgate(modB, B, S[0]); //invert B if subtracting
 
@@ -45,12 +44,14 @@ module ALU_last
   `NOR        norgate(I[6], A, B);
   `OR         orgate(I[7], A, B);
 
-  `MUX        mux(out, I, S); //use S to select which output is shown
+  `MUX        mux(out, I, S);                         //use S to select which output is shown
 
   `XOR        xorgate2(overflow, carryin, carryout); //set overflow flag
 
-  `XOR        xorgate3(SLT, overflow, as); //set SLT
-  'NAND       nandgate1(zero, carryout, out);
+  `XOR        xorgate3(I[3], overflow, as);           //set SLT
+  `NAND       nandgate1(zero, carryout, out);        //set Zero
+
+
 
   //this is the plan
 endmodule
@@ -63,12 +64,11 @@ module ALU_1bit
   input A,
   input B,
   input carryin,
-  input[0:2] S
+  input[2:0] S
 );
   wire[7:0] I;
   wire modB;
   wire addORsub;
-  wire Fout;
 
   `XOR        xorgate(modB, B, S[0]);                   //invert B if subtracting/SLT
 
@@ -99,7 +99,6 @@ module ALU
 );
   wire[30:0] carryin;
   wire[30:0] cout;
-  wire slt;
 
   `ALUBIT  alu0(result[0], cout[0], A[0], B[0], command[0], command);
   `ALUBIT  alu1(result[1], cout[1], A[1], B[1], cout[0], command);
@@ -132,7 +131,7 @@ module ALU
   `ALUBIT  alu28(result[28], cout[28], A[28], B[28], cout[27], command);
   `ALUBIT  alu29(result[29], cout[29], A[29], B[29], cout[28], command);
   `ALUBIT  alu30(result[30], cout[30], A[30], B[30], cout[29], command);
-  `ALULAST alu31(result[31], overflow, carryout, slt, zero, A[31], B[31],  cout[30], command);
+  `ALULAST alu31(result[31], overflow, carryout, zero, A[31], B[31],  cout[30], command);
 
 
 endmodule

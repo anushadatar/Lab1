@@ -14,8 +14,8 @@ module testAlu1bit();
   initial begin
     $dumpvars();
     $display("Out Carryout| E-Out E-Carryout | Operation");
-    S[2:0]=3'b000; carryin=0; A=1; B=1; #10000
-    $display("%b   %b       | 0     1          | SUB", out, carryout);
+    S[2:0]=3'b001; carryin=0; A=1; B=1; #10000
+    $display("%b   %b       | 0     0          | SUB", out, carryout);
 
     end
 
