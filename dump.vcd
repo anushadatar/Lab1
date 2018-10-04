@@ -1,5 +1,5 @@
 $date
-	Wed Oct  3 10:30:53 2018
+	Thu Oct  4 15:35:41 2018
 $end
 $version
 	Icarus Verilog
@@ -21,84 +21,84 @@ $var wire 1 ( A $end
 $var wire 1 ) B $end
 $var wire 3 * S [0:2] $end
 $var wire 1 + carryin $end
-$var wire 1 , overflow $end
-$var wire 1 - out $end
-$var wire 1 . modB $end
-$var wire 1 / carryout $end
-$var wire 1 0 as $end
-$var wire 1 1 SLT $end
-$var wire 8 2 I [0:7] $end
-$scope module anush $end
-$var wire 1 ) A $end
-$var wire 1 3 B $end
+$var wire 1 , zero $end
+$var wire 1 - overflow $end
 $var wire 1 . out $end
-$upscope $end
-$scope module combo $end
+$var wire 1 / modB $end
+$var wire 1 0 carryout $end
+$var wire 1 1 as $end
+$var wire 1 2 SLT $end
+$var wire 8 3 I [0:7] $end
+$scope module addsub $end
 $var wire 1 ( A $end
-$var wire 1 ) B $end
-$var wire 1 4 out $end
-$upscope $end
-$scope module elonMux $end
-$var wire 8 5 I [7:0] $end
-$var wire 3 6 S [2:0] $end
-$var wire 1 - out $end
-$upscope $end
-$scope module houstonWeHaveAProblem $end
-$var wire 1 + A $end
-$var wire 1 , out $end
+$var wire 1 + carryin $end
+$var wire 1 0 carryout $end
+$var wire 1 4 out1 $end
+$var wire 1 5 out2 $end
+$var wire 1 6 out3 $end
+$var wire 1 1 sum $end
 $var wire 1 / B $end
 $upscope $end
-$scope module iAmYourFather $end
-$var wire 1 , A $end
-$var wire 1 1 out $end
-$var wire 1 0 B $end
-$upscope $end
-$scope module lauren $end
+$scope module andgate $end
 $var wire 1 ( A $end
 $var wire 1 ) B $end
 $var wire 1 7 out $end
 $upscope $end
-$scope module nalgene $end
-$var wire 1 ( A $end
-$var wire 1 ) B $end
-$var wire 1 8 out $end
+$scope module elonMux $end
+$var wire 8 8 I [7:0] $end
+$var wire 3 9 S [2:0] $end
+$var wire 1 . out $end
 $upscope $end
-$scope module nombo $end
-$var wire 1 ( A $end
-$var wire 1 ) B $end
-$var wire 1 9 out $end
-$upscope $end
-$scope module purpoise $end
+$scope module nandgate $end
 $var wire 1 ( A $end
 $var wire 1 ) B $end
 $var wire 1 : out $end
 $upscope $end
-$scope module will $end
+$scope module norgate $end
 $var wire 1 ( A $end
-$var wire 1 . B $end
-$var wire 1 + carryin $end
-$var wire 1 / carryout $end
-$var wire 1 ; out1 $end
-$var wire 1 < out2 $end
-$var wire 1 = out3 $end
-$var wire 1 0 sum $end
+$var wire 1 ) B $end
+$var wire 1 ; out $end
+$upscope $end
+$scope module orgate $end
+$var wire 1 ( A $end
+$var wire 1 ) B $end
+$var wire 1 < out $end
+$upscope $end
+$scope module xorgate $end
+$var wire 1 ) A $end
+$var wire 1 = B $end
+$var wire 1 / out $end
+$upscope $end
+$scope module xorgate1 $end
+$var wire 1 ( A $end
+$var wire 1 ) B $end
+$var wire 1 > out $end
+$upscope $end
+$scope module xorgate2 $end
+$var wire 1 + A $end
+$var wire 1 0 B $end
+$var wire 1 - out $end
+$upscope $end
+$scope module xorgate3 $end
+$var wire 1 - A $end
+$var wire 1 1 B $end
+$var wire 1 2 out $end
 $upscope $end
 $upscope $end
 $scope module add_sub_last $end
-$var wire 1 > A $end
-$var wire 1 ? B $end
-$var wire 1 @ carryin $end
-$var wire 1 A carryout $end
-$var wire 1 B out1 $end
-$var wire 1 C out2 $end
-$var wire 1 D out3 $end
-$var wire 1 E overflow $end
-$var wire 1 F sum $end
+$var wire 1 ? A $end
+$var wire 1 @ B $end
+$var wire 1 A carryin $end
+$var wire 1 B carryout $end
+$var wire 1 C out1 $end
+$var wire 1 D out2 $end
+$var wire 1 E out3 $end
+$var wire 1 F overflow $end
+$var wire 1 G sum $end
 $upscope $end
-$scope module testAlu $end
-$var wire 1 G out $end
-$var wire 1 H carryout $end
-$var wire 8 I IF [7:0] $end
+$scope module testAlu1bit $end
+$var wire 1 H out $end
+$var wire 1 I carryout $end
 $var reg 1 J A $end
 $var reg 1 K B $end
 $var reg 3 L S [2:0] $end
@@ -106,85 +106,83 @@ $var reg 1 M carryin $end
 $scope module alu $end
 $var wire 1 J A $end
 $var wire 1 K B $end
-$var wire 8 N IF [7:0] $end
-$var wire 3 O S [0:2] $end
+$var wire 3 N S [0:2] $end
 $var wire 1 M carryin $end
-$var wire 1 G out $end
-$var wire 1 P modB $end
-$var wire 1 H carryout $end
-$var wire 1 Q as $end
-$var wire 8 R I [7:0] $end
-$scope module anush $end
-$var wire 1 K A $end
-$var wire 1 S B $end
-$var wire 1 P out $end
+$var wire 1 H out $end
+$var wire 1 O modB $end
+$var wire 1 I carryout $end
+$var wire 1 P addORsub $end
+$var wire 8 Q I [7:0] $end
+$scope module addsub $end
+$var wire 1 J A $end
+$var wire 1 M carryin $end
+$var wire 1 I carryout $end
+$var wire 1 R out1 $end
+$var wire 1 S out2 $end
+$var wire 1 T out3 $end
+$var wire 1 P sum $end
+$var wire 1 O B $end
 $upscope $end
-$scope module combo $end
+$scope module andgate $end
 $var wire 1 J A $end
 $var wire 1 K B $end
-$var wire 1 T out $end
+$var wire 1 U out $end
 $upscope $end
-$scope module elonMux $end
-$var wire 8 U I [7:0] $end
-$var wire 3 V S [2:0] $end
-$var wire 1 G out $end
+$scope module mux $end
+$var wire 8 V I [7:0] $end
+$var wire 3 W S [2:0] $end
+$var wire 1 H out $end
 $upscope $end
-$scope module lauren $end
-$var wire 1 J A $end
-$var wire 1 K B $end
-$var wire 1 W out $end
-$upscope $end
-$scope module nalgene $end
+$scope module nandgate $end
 $var wire 1 J A $end
 $var wire 1 K B $end
 $var wire 1 X out $end
 $upscope $end
-$scope module nombo $end
+$scope module norgate $end
 $var wire 1 J A $end
 $var wire 1 K B $end
 $var wire 1 Y out $end
 $upscope $end
-$scope module purpoise $end
+$scope module orgate $end
 $var wire 1 J A $end
 $var wire 1 K B $end
 $var wire 1 Z out $end
 $upscope $end
-$scope module will $end
+$scope module xorgate $end
+$var wire 1 K A $end
+$var wire 1 [ B $end
+$var wire 1 O out $end
+$upscope $end
+$scope module xorgate1 $end
 $var wire 1 J A $end
-$var wire 1 P B $end
-$var wire 1 M carryin $end
-$var wire 1 H carryout $end
-$var wire 1 [ out1 $end
-$var wire 1 \ out2 $end
-$var wire 1 ] out3 $end
-$var wire 1 Q sum $end
+$var wire 1 K B $end
+$var wire 1 \ out $end
 $upscope $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-x]
 x\
-x[
+0[
 xZ
 xY
 xX
-xW
-b0 V
-bx0xxx U
+b0 W
+bx0xxx V
+xU
 xT
-0S
-bx0xxx R
-xQ
+xS
+xR
+bx0xxx Q
 xP
-b0 O
-bx0xxx N
+xO
+b0 N
 0M
 b0 L
 1K
 1J
-bx0xxx I
+xI
 xH
 xG
 xF
@@ -192,28 +190,28 @@ xE
 xD
 xC
 xB
-xA
+zA
 z@
 z?
-z>
-x=
+x>
+z=
 x<
 x;
 x:
-x9
-x8
+bz 9
+bx0xxxx 8
 x7
-bz 6
-bx0xxxx 5
+x6
+x5
 x4
-z3
-bx0xxxx 2
+bx0xxxx 3
+x2
 x1
 x0
 x/
 x.
 x-
-x,
+z,
 z+
 bz *
 z)
@@ -227,36 +225,28 @@ bz "
 z!
 $end
 #10000
-1P
-bx00xx I
-bx00xx N
-bx00xx R
-bx00xx U
-0W
+1O
+bx00xx Q
+bx00xx V
+0\
 #20000
 0Y
-bx00x00xx I
-bx00x00xx N
-bx00x00xx R
-bx00x00xx U
+bx00x00xx Q
+bx00x00xx V
 0X
 #30000
-0\
 1Z
-b100100xx I
-b100100xx N
-b100100xx R
-b100100xx U
-1T
+b100100xx Q
+b100100xx V
+1U
+0S
 #40000
-0[
-1]
+1T
+0R
 #70000
-0G
-b10010000 I
-b10010000 N
-b10010000 R
-b10010000 U
-0Q
-1H
-#100000000
+1I
+0H
+b10010000 Q
+b10010000 V
+0P
+#10000000

@@ -60,7 +60,6 @@ module ALU_1bit
 (
   output out,
   output carryout,
-  output[7:0] IF,
   input A,
   input B,
   input carryin,
@@ -68,25 +67,23 @@ module ALU_1bit
 );
   wire[7:0] I;
   wire modB;
-  wire as;
+  wire addORsub;
   wire Fout;
 
-  `XOR        xorgate(modB, B, S[0]); //invert B if subtracting
+  `XOR        xorgate(modB, B, S[0]);                   //invert B if subtracting/SLT
 
-  `ADDSUB     addsub(I[0], carryout, A, modB, carryin); //should be outputs 0 and 1
+  `ADDSUB     addsub(addORsub, carryout, A, modB, carryin);   //should be outputs 0 and 1
   `XOR        xorgate1(I[2], A, B);
   `AND        andgate(I[4], A, B);
   `NAND       nandgate(I[5], A, B);
   `NOR        norgate(I[6], A, B);
   `OR         orgate(I[7], A, B);
 
-  `MUX        elonMux(out, I, S); //select which output is shown
+  `MUX        mux(out, I, S);                           //select which output is shown
 
-  assign I[0] = as;
-  assign I[1] = as;
-  assign I[3] = 0;
-  assign IF = I;
-  //assign out = Fout;
+  assign I[0] = addORsub;
+  assign I[1] = addORsub;
+  assign I[3] = 0;                                      //We only want the SLT pin to change on the MSB
 
 endmodule
 
@@ -96,11 +93,12 @@ module ALU
   output        carryout,
   output        zero,
   output        overflow,
-  input[31:0]   operandA,
-  input[31:0]   operandB,
+  input[31:0]   A,
+  input[31:0]   B,
   input[2:0]    command
 );
+  wire[30:0] carryin;
 
+  `ALUBIT alu1(result[0], carryout[0], A[0], B[0], carryin[0], command);
 
-  // Your code here
 endmodule
