@@ -1,5 +1,5 @@
 $date
-	Wed Oct  3 01:47:51 2018
+	Wed Oct  3 10:30:53 2018
 $end
 $version
 	Icarus Verilog
@@ -41,7 +41,7 @@ $upscope $end
 $scope module elonMux $end
 $var wire 8 5 I [7:0] $end
 $var wire 3 6 S [2:0] $end
-$var reg 1 - out $end
+$var wire 1 - out $end
 $upscope $end
 $scope module houstonWeHaveAProblem $end
 $var wire 1 + A $end
@@ -98,89 +98,93 @@ $upscope $end
 $scope module testAlu $end
 $var wire 1 G out $end
 $var wire 1 H carryout $end
-$var reg 1 I A $end
-$var reg 1 J B $end
-$var reg 3 K S [2:0] $end
-$var reg 1 L carryin $end
+$var wire 8 I IF [7:0] $end
+$var reg 1 J A $end
+$var reg 1 K B $end
+$var reg 3 L S [2:0] $end
+$var reg 1 M carryin $end
 $scope module alu $end
-$var wire 1 I A $end
-$var wire 1 J B $end
-$var wire 3 M S [0:2] $end
-$var wire 1 L carryin $end
-$var wire 1 G out $end
-$var wire 1 N modB $end
-$var wire 1 H carryout $end
-$var wire 1 O as $end
-$var wire 8 P I [0:7] $end
-$scope module anush $end
 $var wire 1 J A $end
-$var wire 1 Q B $end
-$var wire 1 N out $end
+$var wire 1 K B $end
+$var wire 8 N IF [7:0] $end
+$var wire 3 O S [0:2] $end
+$var wire 1 M carryin $end
+$var wire 1 G out $end
+$var wire 1 P modB $end
+$var wire 1 H carryout $end
+$var wire 1 Q as $end
+$var wire 8 R I [7:0] $end
+$scope module anush $end
+$var wire 1 K A $end
+$var wire 1 S B $end
+$var wire 1 P out $end
 $upscope $end
 $scope module combo $end
-$var wire 1 I A $end
-$var wire 1 J B $end
-$var wire 1 R out $end
+$var wire 1 J A $end
+$var wire 1 K B $end
+$var wire 1 T out $end
 $upscope $end
 $scope module elonMux $end
-$var wire 8 S I [7:0] $end
-$var wire 3 T S [2:0] $end
-$var reg 1 G out $end
+$var wire 8 U I [7:0] $end
+$var wire 3 V S [2:0] $end
+$var wire 1 G out $end
 $upscope $end
 $scope module lauren $end
-$var wire 1 I A $end
-$var wire 1 J B $end
-$var wire 1 U out $end
-$upscope $end
-$scope module nalgene $end
-$var wire 1 I A $end
-$var wire 1 J B $end
-$var wire 1 V out $end
-$upscope $end
-$scope module nombo $end
-$var wire 1 I A $end
-$var wire 1 J B $end
+$var wire 1 J A $end
+$var wire 1 K B $end
 $var wire 1 W out $end
 $upscope $end
-$scope module purpoise $end
-$var wire 1 I A $end
-$var wire 1 J B $end
+$scope module nalgene $end
+$var wire 1 J A $end
+$var wire 1 K B $end
 $var wire 1 X out $end
 $upscope $end
+$scope module nombo $end
+$var wire 1 J A $end
+$var wire 1 K B $end
+$var wire 1 Y out $end
+$upscope $end
+$scope module purpoise $end
+$var wire 1 J A $end
+$var wire 1 K B $end
+$var wire 1 Z out $end
+$upscope $end
 $scope module will $end
-$var wire 1 I A $end
-$var wire 1 N B $end
-$var wire 1 L carryin $end
+$var wire 1 J A $end
+$var wire 1 P B $end
+$var wire 1 M carryin $end
 $var wire 1 H carryout $end
-$var wire 1 Y out1 $end
-$var wire 1 Z out2 $end
-$var wire 1 [ out3 $end
-$var wire 1 O sum $end
+$var wire 1 [ out1 $end
+$var wire 1 \ out2 $end
+$var wire 1 ] out3 $end
+$var wire 1 Q sum $end
 $upscope $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
+x]
+x\
 x[
 xZ
 xY
 xX
 xW
-xV
-xU
-b11 T
-bx0xxxx S
-xR
-0Q
-bx0xxxx P
-xO
-xN
-b11 M
-0L
-b11 K
-0J
-1I
+b0 V
+bx0xxx U
+xT
+0S
+bx0xxx R
+xQ
+xP
+b0 O
+bx0xxx N
+0M
+b0 L
+1K
+1J
+bx0xxx I
 xH
 xG
 xF
@@ -223,27 +227,36 @@ bz "
 z!
 $end
 #10000
-0N
-bx10xxxx P
-bx10xxxx S
-1U
+1P
+bx00xx I
+bx00xx N
+bx00xx R
+bx00xx U
+0W
 #20000
-1W
-bx10x10x P
-bx10x10x S
-0V
+0Y
+bx00x00xx I
+bx00x00xx N
+bx00x00xx R
+bx00x00xx U
+0X
 #30000
-0Z
-1X
-bx100101 P
-bx100101 S
-0R
+0\
+1Z
+b100100xx I
+b100100xx N
+b100100xx R
+b100100xx U
+1T
 #40000
-1Y
 0[
+1]
 #70000
-b11100101 P
-b11100101 S
-1O
-0H
+0G
+b10010000 I
+b10010000 N
+b10010000 R
+b10010000 U
+0Q
+1H
 #100000000

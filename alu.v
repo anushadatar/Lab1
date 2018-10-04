@@ -3,7 +3,7 @@
 `include "add_sub.v"
 
 
-`define MUX     multiplexer #10 //this delay could be wrong & this line does not work
+`define MUX     multiplexer //this delay could be wrong & this line does not work
 `define AND     ALUand
 `define OR      ALUor
 `define NAND    ALUnand
@@ -58,14 +58,16 @@ module ALU_1bit
 (
   output out,
   output carryout,
+  output[7:0] IF,
   input A,
   input B,
   input carryin,
   input[0:2] S
 );
-  wire[0:7] I;
+  wire[7:0] I;
   wire modB;
   wire as;
+  wire Fout;
 
 
 
@@ -82,7 +84,9 @@ module ALU_1bit
   assign I[0] = as;
   assign I[1] = as;
   assign I[3] = 0;
-  
+  assign IF = I;
+  //assign out = Fout;
+
 endmodule
 
 module ALU

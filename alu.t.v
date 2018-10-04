@@ -8,14 +8,16 @@ module testAlu();
   reg[2:0] S;
 
   wire out, carryout;
+  wire[7:0] I;
+  wire[7:0] IF;
 
-  ALU_1bit alu (out, carryout, A, B, carryin, S);
+  ALU_1bit alu (out, carryout, IF, A, B, carryin, S);
 
   initial begin
     $dumpvars();
-    $display("Out Cout| Exp | Operation");
-    S[2:0]=3'b011; carryin=0; A=1; B=0; #100000
-    $display("%b   %b | 1  0 | Add", out, carryout);
+    $display("Out Cout| Eout ECout | Operation");
+    S[2:0]=3'b000; carryin=0; A=1; B=1; #100000
+    $display("%b   %b   | 0  1 | SUB", out, carryout);
 
     $finish();
     end
