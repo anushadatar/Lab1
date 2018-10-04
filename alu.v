@@ -22,7 +22,7 @@ module ALU_last
   output out,
   output overflow,
   output carryout,
-  output zero,
+  //output zero,
   input A,
   input B,
   input carryin,
@@ -44,12 +44,12 @@ module ALU_last
   `NOR        norgate(I[6], A, B);
   `OR         orgate(I[7], A, B);
 
-  `MUX        mux(out, I, S);                         //use S to select which output is shown
+  `MUX        elonMux(out, I, S);                         //use S to select which output is shown
 
   `XOR        xorgate2(overflow, carryin, carryout); //set overflow flag
 
   `XOR        xorgate3(I[3], overflow, as);           //set SLT
-  `NAND       nandgate1(zero, carryout, out);        //set Zero
+  //`NAND       nandgate1(zero, carryout, out);        //set Zero
 
 
 
@@ -79,7 +79,7 @@ module ALU_1bit
   `NOR        norgate(I[6], A, B);
   `OR         orgate(I[7], A, B);
 
-  `MUX        mux(out, I, S);                           //select which output is shown
+  `MUX        elonMux(out, I, S);                           //select which output is shown
 
   assign I[0] = addORsub;
   assign I[1] = addORsub;
@@ -131,7 +131,15 @@ module ALU
   `ALUBIT  alu28(result[28], cout[28], A[28], B[28], cout[27], command);
   `ALUBIT  alu29(result[29], cout[29], A[29], B[29], cout[28], command);
   `ALUBIT  alu30(result[30], cout[30], A[30], B[30], cout[29], command);
-  `ALULAST alu31(result[31], overflow, carryout, zero, A[31], B[31],  cout[30], command);
+  `ALULAST alu31(result[31], overflow, carryout, A[31], B[31],  cout[30], command);
 
+
+  `NORZ    nor(zero, result[0], result[1], result[2], result[3], result[4],
+                result[5], result[6], result[7], result[8], result[9],
+                result[10], result[11], result[12], result[13], result[14],
+                result[15], result[16], result[17], result[18], result[19],
+                result[20], result[21], result[22], result[23], result[24],
+                result[25], result[26], result[27], result[28], result[29],
+                result[28], result[29], result[30], result[31]);
 
 endmodule
