@@ -50,7 +50,7 @@ module ALU_last
   `XOR        xorgate2(overflow, carryin, carryout); //set overflow flag
 
   `XOR        xorgate3(SLT, overflow, as); //set SLT
-
+  'NAND       nandgate1(zero, carryout, out);
 
   //this is the plan
 endmodule
