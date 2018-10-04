@@ -22,32 +22,34 @@ module ALU_last
   output overflow,
   output carryout,
   output SLT,
+  output zero,
   input A,
   input B,
   input carryin,
   input[0:2] S
 );
-wire[0:7] I;
-wire modB;
-wire as;
+  wire[0:7] I;
+  wire modB;
+  wire as;
 
-assign I[0] = as;
-assign I[1] = as;
-assign I[3] = 0;
+  assign I[0] = as; //output 0 is add
+  assign I[1] = as; // output 1 is sub
+  assign I[3] = 0;  // output 3 is zero (SLT)
 
-`XOR        anush(modB, B, S[0]);
-`ADDSUB     will(as, carryout, A, modB, carryin);
-`XOR        lauren(I[2], A, B);
-`AND        combo(I[4], A, B);
-`NAND       nombo(I[5], A, B);
-`NOR        nalgene(I[6], A, B);
-`OR         purpoise(I[7], A, B);
+  `XOR        xorgate(modB, B, S[0]); //invert B if subtracting
 
-`MUX        elonMux(out, I, S);
+  `ADDSUB     addsub(as, carryout, A, modB, carryin);
+  `XOR        xorgate1(I[2], A, B);
+  `AND        andgate(I[4], A, B);
+  `NAND       nandgate(I[5], A, B);
+  `NOR        norgate(I[6], A, B);
+  `OR         orgate(I[7], A, B);
 
-`XOR        houstonWeHaveAProblem(overflow, carryin, carryout);
+  `MUX        elonMux(out, I, S); //use S to select which output is shown
 
-`XOR        iAmYourFather(SLT, overflow, as);
+  `XOR        xorgate2(overflow, carryin, carryout); //set overflow flag
+
+  `XOR        xorgate3(SLT, overflow, as); //set SLT
 
 
   //this is the plan
@@ -69,17 +71,16 @@ module ALU_1bit
   wire as;
   wire Fout;
 
+  `XOR        xorgate(modB, B, S[0]); //invert B if subtracting
 
+  `ADDSUB     addsub(I[0], carryout, A, modB, carryin); //should be outputs 0 and 1
+  `XOR        xorgate1(I[2], A, B);
+  `AND        andgate(I[4], A, B);
+  `NAND       nandgate(I[5], A, B);
+  `NOR        norgate(I[6], A, B);
+  `OR         orgate(I[7], A, B);
 
-  `XOR        anush(modB, B, S[0]);
-  `ADDSUB     will(as, carryout, A, modB, carryin);
-  `XOR        lauren(I[2], A, B);
-  `AND        combo(I[4], A, B);
-  `NAND       nombo(I[5], A, B);
-  `NOR        nalgene(I[6], A, B);
-  `OR         purpoise(I[7], A, B);
-
-  `MUX        elonMux(out, I, S);
+  `MUX        elonMux(out, I, S); //select which output is shown
 
   assign I[0] = as;
   assign I[1] = as;
