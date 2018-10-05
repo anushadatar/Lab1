@@ -3,7 +3,7 @@
 `include "add_sub.v"
 
 
-`define MUX     multiplexer //this delay could be wrong & this line does not work
+`define MUX     multiplexer #120
 `define AND     ALUand
 `define OR      ALUor
 `define NAND    ALUnand
