@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+
+
+def create_module_1bit(objectname):
+    print("module test" + objectname + "gate(): \n")
+    print("wire out;\n reg A; \n reg B; \n" + objectname + " " + objectname + "gate(out, A, B );")
+    print("initial begin \n $display(\"Testing" + objectname + "\"); \n $display(\"A | B | " + objectname + "\");")
+    print("A = 0; B = 0; #50 \n $display(\"%b | %b | %b \", A, B, out);")
+    print("if (out !== _) $display(\n\"Failure on A = 0 and B = 0\");")
+    print("A = 0; B = 1; #50 \n $display(\"%b | %b | %b \", A, B, out);")
+    print("if (out !== _) $display(\"Failure on A = 0 B = 1\");")
+    print("A = 1; B = 0; #50 \n $display(\"%b | %b | %b \", A, B, out);")
+    print("if (out !== _) $display(\"Failure on A = 1 B = 0\");")
+    print("A = 1; B = 1; #50 \n $display(\"%b | %b | %b \", A, B, out);")
+    print("if (out !== _) $display(\"Failure on A = 1 B = 1\");")
+    print("\n end \n endmodule")
+
+create_module_1bit("ALUnor")

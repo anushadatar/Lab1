@@ -1,6 +1,6 @@
-`include "multiplexer.v"
-`include "gates.v"
-`include "add_sub.v"
+`include "operations/multiplexer.v"
+`include "operations/gates.v"
+`include "operations/add_sub.v"
 
 
 `define MUX     multiplexer //this delay could be wrong & this line does not work
