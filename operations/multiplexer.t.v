@@ -2,6 +2,9 @@
 `timescale 1 ns / 1 ps
 `include "multiplexer.v"
 
+/*
+Tests multiplexer exhaustively.
+*/
 module testMux();
 
   reg[7:0] I;

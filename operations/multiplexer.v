@@ -1,4 +1,6 @@
-//Stoppppp
+/*
+3-select bit multiplexer.
+*/
 module multiplexer
 (
 output out,

@@ -1,6 +1,9 @@
 `timescale 1 ns / 1 ps
 `include "gates.v"
 
+/*
+Tests all gates exhastively.
+*/
 module testALUgates(); 
     wire andout, orout, norout, nandout, xorout;
     reg A; 

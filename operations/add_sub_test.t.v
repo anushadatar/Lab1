@@ -1,6 +1,11 @@
 `timescale 1 ns / 1 ps
 `include "add_sub.v"
 
+/*
+Addition and subtraction test.
+Uses add_sub module.
+
+*/
 module add_sub_test();
 
   reg A;

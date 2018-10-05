@@ -2,6 +2,9 @@
 `define XOR xor #30
 `define OR or #30
 
+/*
+Addition and subtraction module for one bit general case.
+*/
 module add_sub
 (
   output sum,
@@ -21,6 +24,10 @@ module add_sub
   `OR or1(carryout,out2,out3);
 endmodule
 
+/*
+Addition and subtraction module for last case where
+carryout flag is implemented.
+*/
 module add_sub_last
 (
   output sum,

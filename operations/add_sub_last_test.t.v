@@ -18,6 +18,7 @@ module add_sub_test();
   add_sub_last adder (sum,carryout,overflow,A,B,carryin);
 
   initial begin
+    // Test exhaustively without carryin.
     A = 1; B = 1; carryin = 0; #1000
     if (sum !== 0) $display("110 sum failed");
     if (carryout !== 1) $display("110 carry failed");
@@ -38,6 +39,7 @@ module add_sub_test();
     if (carryout !== 0) $display("000 carry failed");
     if (overflow !== 0) $display("000 overflow failed");
 
+    // Test exhaustively with carryin,
     A = 1; B = 1; carryin = 1; #1000
     if (sum !== 1) $display("111 sum failed");
     if (carryout !== 1) $display("111 carry failed");
