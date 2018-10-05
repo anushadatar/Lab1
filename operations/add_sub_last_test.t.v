@@ -1,6 +1,13 @@
 `timescale 1 ns / 1 ps
 `include "add_sub.v"
 
+/*
+Test module for addition and subtraction operations to 
+be incorporated into 1-bit ALU.
+
+USES ADDER module from add_sub.v
+*/
+
 module add_sub_test();
 
   reg A;

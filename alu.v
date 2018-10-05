@@ -1,7 +1,6 @@
-`include "multiplexer.v"
-`include "gates.v"
-`include "add_sub.v"
-
+`include "operations/multiplexer.v"
+`include "operations/gates.v"
+`include "operations/add_sub.v"
 
 `define MUX     multiplexer #120
 `define AND     ALUand
@@ -15,7 +14,14 @@
 `define ADDSUB  add_sub
 `define ADDSUBL add_sub_last
 
+/*
+The last 1bit ALU in the cascade of individual ALUs that make up the complete device.
+Takes in A, B, Carryin, and Select. Outputs value, carryout, and overflow.
 
+Note that remaining individual ALU units do not include overflow.
+
+Uses multiplexer, gates, and add_sub from the operations directory.
+*/
 
 module ALU_last
 (
@@ -49,12 +55,16 @@ module ALU_last
   `XOR        xorgate2(overflow, carryin, carryout); //set overflow flag
 
   `XOR        xorgate3(I[3], overflow, as);           //set SLT
-  //`NAND       nandgate1(zero, carryout, out);        //set Zero
 
-
-
-  //this is the plan
 endmodule
+
+/*
+The 1bit ALUs in the cascade of individual ALUs that make up the complete device.
+Takes in A, B, Carryin, and Select. Outputs value and carryout.
+
+The first 31 bits are processed through this device.
+Uses multiplexer, gates, and add_sub from the operations directory.
+*/
 
 
 module ALU_1bit
@@ -86,6 +96,15 @@ module ALU_1bit
   assign I[3] = 0;                                      //We only want the SLT pin to change on the MSB
 
 endmodule
+
+/*
+Full 32-bit ALU. Contains 32 individual 1-bit ALU units - 31 of 
+the standard modules and one of the final one.
+
+Takes in A, B, and select command. Outputs result of specified 
+operation, carryout, zero (returns 1 if all values are zero), 
+and an overflow flag.
+*/
 
 module ALU
 (
